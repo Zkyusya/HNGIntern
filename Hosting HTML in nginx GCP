@@ -1,0 +1,20 @@
+Hosting HTML in Nginx Google cloud platform (GCP)
+Create an instance- allow http andh ttps traffic
+Go to “VM instances” on your Google Cloud dashboard, and click “SSH” 
+next to the instance that you just created. This will launch a web browser-based terminal to log in to your server.
+Start by updating the packages to the latest available vesrion using..sudo apt update then sudo apt upgrade
+now you can install web server-- be using nginx sudo apt install nginx
+check current status of nginx sudo systemctl start nginx
+configure UFW/firewall for nginx --debian does not intall UFW by default so you need to install using the following command sudo apt install UFW
+Allow connectionsto SSH and the ports for nginx using command sudo ufw allow SSH then sudo ufw allow 'Nginx Full'
+Enable UFW using command sudo ufw enable
+check the status using command sudo ufw status verbose .....check nginx service on we browser using the public ip address
+cd /var/www/ --- directory for the html files ...use command ls
+go inside the html file using command cd html/ ....use command ls
+use command cat with the file listed above
+now upload files from your local computer to overwrite the default nginx file
+codes to run cd\ then ls 
+sudo cp index.html /var/www/html
+cd /var
+cd www/html
+ls
